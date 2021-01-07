@@ -15,6 +15,7 @@ export default function Player({ children, ...restProps }) {
 }
 
 Player.Video = function PlayerVideo({ src, ...restProps }) {
+
   const { showPlayer, setShowPlayer } = useContext(PlayerContext);
 
   return showPlayer
@@ -32,8 +33,9 @@ Player.Video = function PlayerVideo({ src, ...restProps }) {
     : null;
 };
 
+
 Player.Button = function PlayerButton({ ...restProps }) {
-  const { showPlayer, setShowPlayer } = useContext(PlayerContext);
+  const { setShowPlayer } = useContext(PlayerContext);
 
   return (
     <Button onClick={() => setShowPlayer((showPlayer) => !showPlayer)} {...restProps}>
